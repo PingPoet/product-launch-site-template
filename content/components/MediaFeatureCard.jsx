@@ -21,8 +21,14 @@ const MediaFeatureCard = ({
     : description
 
   // mediaFirst=true means the image/video is on the left; otherwise right.
-  const mediaOrderClass = mediaFirst ? "order-first" : "order-last"
-  const textOrderClass = !mediaFirst ? "order-first" : "order-last"
+  // the order-md-* classes mean apply on "medium and up" size screens, so mobile screens always get the image first.
+  const mediaOrderClass = mediaFirst
+    ? "order-md-first order-first"
+    : "order-md-last"
+  const textOrderClass = !mediaFirst
+    ? "order-md-first order-last"
+    : "order-md-last"
+
   const svgStyle = {
     // default fill color for svg images is bootstrap primary
     fill: svgFillColor ?? "var(--bs-primary)",
@@ -31,9 +37,12 @@ const MediaFeatureCard = ({
   svgViewBox = svgViewBox ?? "0 0 8 8"
 
   return (
-    <div data-note="container optional action buttons">
-      <div data-note="feature row" className="row g-5 my-5">
-        <div data-note="title" className={`col-6 ${textOrderClass}`}>
+    <div data-note="container optional action buttons" className="pb-5 mb-5">
+      <div data-note="feature row" className="row g-5">
+        <div
+          data-note="title"
+          className={`col-sm-6 col-md-6 ${textOrderClass}`}
+        >
           <h1 className="display-4">{title}</h1>
           <strong data-note="tagline" className="lead">
             {description}
@@ -42,7 +51,7 @@ const MediaFeatureCard = ({
 
         <div
           data-note="media"
-          className={`col align-self-center ${mediaOrderClass}`}
+          className={`col-sm-6 col-md-6 align-self-center ${mediaOrderClass}`}
         >
           {videoUrl && (
             <video
