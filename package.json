@@ -8,7 +8,7 @@
     "build:css": "parcel build --dist-dir _site/style content/style/style.scss",
     "build:js": "parcel build --dist-dir _site/js content/js/main.js",
     "build:images": "rm -rf _site/images ; mkdir _site ; cp -R content/images _site/images",
-    "build:videos": "rm -rf _site/videos ; mkdir _site ; cp -R content/videos _site/videos",
+    "build:videos": "test -d content/videos && (rm -rf _site/videos ; mkdir _site ; cp -R content/videos _site/videos) || exit 0",
     "start": "npm run clean; run-p watch:*",
     "watch:css": "parcel watch --no-hmr --dist-dir _site/style content/style/style.scss",
     "watch:js": "parcel watch --no-hmr --dist-dir _site/js content/js/main.js",
