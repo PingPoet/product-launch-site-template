@@ -3,7 +3,7 @@ import React from "react"
 const SiteHeader = ({ site }) => (
   <header className="d-flex align-items-center pb-3 mb-5 border-bottom">
     <a
-      href="/"
+      href={site.baseUrl}
       className="d-flex align-items-center text-dark text-decoration-none"
     >
       <img
