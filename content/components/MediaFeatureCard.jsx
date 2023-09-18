@@ -1,5 +1,6 @@
 import React from "react"
 import { useRemarkSync } from "react-remark"
+import { isRelativeUrl } from "./util/url"
 
 const MediaFeatureCard = ({
   title,
@@ -79,14 +80,25 @@ const MediaFeatureCard = ({
       {(primaryAction || secondaryAction) && (
         <div data-note="actions" className="mb-5">
           {primaryAction && (
-            <a className="btn btn-primary btn-lg mx-1" href={primaryAction.url}>
+            <a
+              className="btn btn-primary btn-lg mx-1"
+              href={
+                isRelativeUrl(primaryAction.url)
+                  ? site.baseUrl + primaryAction.url
+                  : primaryAction.url
+              }
+            >
               {primaryAction.label}
             </a>
           )}
           {secondaryAction && (
             <a
               className="btn btn-secondary btn-lg mx-1"
-              href={secondaryAction.url}
+              href={
+                isRelativeUrl(secondaryAction.url)
+                  ? site.baseUrl + secondaryAction.url
+                  : secondaryAction.url
+              }
             >
               {secondaryAction.label}
             </a>

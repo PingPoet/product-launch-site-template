@@ -1,4 +1,5 @@
 import React from "react"
+import { isRelativeUrl } from "../../../components/util/url"
 
 /*
 References:
@@ -77,21 +78,15 @@ const DescriptionTags = ({ description, site }) => {
   }
 }
 
-function isRelative(urlToTest) {
-  const parsed = new URL(urlToTest, baseUrl.origin)
-  const baseUrl = new URL("https://example.com")
-  return baseUrl.origin === parsed.origin
-}
-
 const ImageTags = ({ image, site }) => {
-  let isRelativeUrl = false
+  let isRelative = false
   try {
-    isRelativeUrl = image && isRelative(image)
+    isRelative = image && isRelativeUrl(image)
   } catch (err) {
     console.error(`image url '${image}' is not a valid url.`)
-    isRelativeUrl = false
+    isRelative = false
   }
-  if (isRelativeUrl) {
+  if (isRelative) {
     image = site.baseUrl + image
   } else {
     image = site.baseUrl + site.seoImage

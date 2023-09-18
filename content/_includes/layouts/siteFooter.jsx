@@ -20,17 +20,23 @@ const SiteFooter = ({ page, site }) => (
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link text-muted" href="/contact">
+        <a className="nav-link text-muted" href={site.baseUrl + "/contact"}>
           Contact Us
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link text-muted" href="/policy/terms">
+        <a
+          className="nav-link text-muted"
+          href={site.baseUrl + "/policy/terms}"}
+        >
           Terms of Service
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link text-muted" href="/policy/privacy">
+        <a
+          className="nav-link text-muted"
+          href={site.baseUrl + "/policy/privacy"}
+        >
           Privacy &amp; Cookies
         </a>
       </li>
