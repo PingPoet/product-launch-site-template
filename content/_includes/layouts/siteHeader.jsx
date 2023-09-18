@@ -13,7 +13,7 @@ const SiteHeader = ({ site }) => (
         className="me-2"
       />
 
-      <h1 className="fs-4">{site.siteName}</h1>
+      <h1 className="fs-4">{site.name}</h1>
     </a>
   </header>
 )

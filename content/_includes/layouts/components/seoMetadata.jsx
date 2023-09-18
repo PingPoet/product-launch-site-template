@@ -94,7 +94,7 @@ const ImageTags = ({ image, site }) => {
   if (isRelativeUrl) {
     image = site.baseUrl + image
   } else {
-    image = site.baseUrl + "/images/pingpoet-seo-banner.png"
+    image = site.baseUrl + site.seoImage
   }
 
   return (

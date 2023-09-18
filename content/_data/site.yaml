@@ -1,11 +1,14 @@
 # a base url to use for rooting any relative links
-baseUrl: https://stockpoet.pingpoet.com/
-siteName: Stock Poet
+baseUrl: https://stockpoet.pingpoet.com
+name: Stock Poet
+# a default image used in facebook's open graph, twitter's metadata, and google locations where the link to your page is shared (test: https://opengraph.dev/panel?url=https%3A%2F%2Fopengraph.dev)
+seoImage: /images/pingpoet-seo-banner.png
+# A url to use for people to submit edits to the page. ${PAGE_PATH} will be replaced with the path to the current page.
 pageEditUrl: https://github.com/pingpoet/www/edit/main/${PAGE_PATH}
 # a default page title used when one is not set on the page front matter
 defaultTitle: Stock Poet
 # a default page description used when one is not set on the page front matter
-defaultDescription: A powerful combination of public business data from the SEC, metrics from the broader economy, value-investing metrics, customizable forecasting and custom metrics.
+defaultDescription: The data, calculations and the simplicity that you need to make smart investing decisions.
 # for cloudflare insights:
 cloudflare_insights_token: ""
 # start year of the site for copyright in footer
