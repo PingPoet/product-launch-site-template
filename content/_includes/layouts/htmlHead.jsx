@@ -12,10 +12,10 @@ const HtmlHead = (props) => {
         <link
           rel="icon"
           type="image/png"
-          href="/images/quill_pen_feather-rose_64x64.png"
+          href={site.baseUrl + "/images/quill_pen_feather-rose_64x64.png"}
         />
-        <link rel="stylesheet" href="/style/style.css" />
-        <script type="module" src="/js/main.js"></script>
+        <link rel="stylesheet" href={site.baseUrl + "/style/style.css"} />
+        <script type="module" src={site.baseUrl + "/js/main.js"}></script>
         <SeoMetadata {...props} />
       </head>
     </>

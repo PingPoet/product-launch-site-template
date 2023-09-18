@@ -1,5 +1,5 @@
 # a base url to use for rooting any relative links
-baseUrl: https://stockpoet.pingpoet.com
+baseUrl: https://pingpoet.github.io/product-launch-site-template 
 name: Stock Poet
 # a default image used in facebook's open graph, twitter's metadata, and google locations where the link to your page is shared (test: https://opengraph.dev/panel?url=https%3A%2F%2Fopengraph.dev)
 seoImage: /images/pingpoet-seo-banner.png

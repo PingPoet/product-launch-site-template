@@ -14,6 +14,7 @@ const MediaFeatureCard = ({
   mediaFirst,
   primaryAction,
   secondaryAction,
+  site,
 }) => {
   title = titleMarkdown ? useRemarkSync(titleMarkdown) : title
   description = descriptionMarkdown
@@ -55,21 +56,21 @@ const MediaFeatureCard = ({
         >
           {videoUrl && (
             <video
-              src={videoUrl}
+              src={site.baseUrl + videoUrl}
               className="rounded-4 shadow"
               style={{ width: "100%", height: "100%" }}
             ></video>
           )}
           {imageUrl && (
             <img
-              src={imageUrl}
+              src={site.baseUrl + imageUrl}
               className="rounded-4 shadow"
               style={{ width: "100%", height: "100%" }}
             />
           )}
           {svgUrl && (
             <svg viewBox={svgViewBox} className="rounded-4 shadow">
-              <use href={svgUrl} style={svgStyle}></use>
+              <use href={site.baseUrl + svgUrl} style={svgStyle}></use>
             </svg>
           )}
         </div>

@@ -7,7 +7,7 @@ const SiteHeader = ({ site }) => (
       className="d-flex align-items-center text-dark text-decoration-none"
     >
       <img
-        src="/images/quill_pen_feather-rose.svg"
+        src={site.baseUrl + "/images/quill_pen_feather-rose.svg"}
         width="40"
         height="32"
         className="me-2"

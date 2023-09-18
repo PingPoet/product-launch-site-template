@@ -10,7 +10,7 @@ import Card from "../../components/card.jsx"
 import MediaFeatureCard from "../../components/MediaFeatureCard.jsx"
 import { useRemarkSync } from "react-remark"
 
-export const Features = ({ features }) => {
+export const Features = ({ features, site }) => {
   /* we showcase the first feature, and just loop through the rest as cards */
   const showcased =
     features && features.length > 0
@@ -34,6 +34,7 @@ return (
       svgFillColor={showcased.svgFillColor}
       svgViewBox={showcased.svgViewBox}
       videoUrl={showcased.videoUrl}
+      site={site}
     />
 
     <div className="py-5">&nbsp;</div>
@@ -49,6 +50,7 @@ return (
         svgFillColor={feature.svgFillColor}
         svgViewBox={feature.svgViewBox}
         videoUrl={feature.videoUrl}
+        site={site}
       />
     ))}
 
@@ -66,7 +68,7 @@ return (
 
       <main className="container-sm" style={{maxWidth:"1024px"}}>
 
-        <Features features={props.features}/>
+        <Features {...props}/>
 
       </main>
 
