@@ -1,6 +1,16 @@
-# Ping Poet Product Site Template
+# Ping Poet Product Launch Site Template
 
 This is a template for a website for a product.
+
+**Features:**
+
+- :clock1: Fast to create and launch - just clone this repo
+- :free: Host for free on GitHub pages
+- :zap: A static site is deployed so it's lightning fast
+- :white_check_mark: Easy to edit in plain text with markdown
+- :atom_symbol: Markdown+MDX allows using React's JSX Syntax and React components when you need ultimate control
+- :balloon: You can use all the power of [Eleventy (11ty)](https://www.11ty.dev/) out of the box
+- :iphone: Responsive on tiny mobile screens and large desktop screens :desktop_computer:
 
 ## Usage
 
@@ -11,6 +21,19 @@ Edit the [content/index.mdx](content/index.mdx) and [content/\_data/site.yaml](c
 ### Markdown
 
 To edit with markdown just name a file anywhere under the content directory with an \*.mdx extension and write markdown.
+
+### Custom Page Layouts
+
+Some layouts are included in [content/\_includes/layouts](content/_includes/layouts) but you can also create your own.
+
+Select a layout with some front-matter in front of your mdx file like so:
+
+```yaml
+---
+layout: default
+---
+Hello World!
+```
 
 ### MDX: Markdown+React JSX
 
@@ -31,16 +54,7 @@ layout: default
 <script src="//embed.typeform.com/next/embed.js"></script>
 ```
 
-### Common Layouts
-
-Select a layout with some front-matter in front of your mdx file like so:
-
-```yaml
----
-layout: default
----
-Hello World!
-```
+You can also create your own React components - just create a .jsx file and import them into your \*.mdx files. Look at examples of components in any .jsx file. Components are used extensively in the provided [layouts](content/_includes/layouts).
 
 ### SEO/Social Media Metadata
 
