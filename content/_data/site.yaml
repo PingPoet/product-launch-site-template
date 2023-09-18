@@ -1,0 +1,12 @@
+# a base url to use for rooting any relative links
+baseUrl: https://stockpoet.pingpoet.com/
+siteName: Stock Poet
+pageEditUrl: https://github.com/pingpoet/www/edit/main/${PAGE_PATH}
+# a default page title used when one is not set on the page front matter
+defaultTitle: Stock Poet
+# a default page description used when one is not set on the page front matter
+defaultDescription: A powerful combination of public business data from the SEC, metrics from the broader economy, value-investing metrics, customizable forecasting and custom metrics.
+# for cloudflare insights:
+cloudflare_insights_token: ""
+# start year of the site for copyright in footer
+start_year: 2023

@@ -1,0 +1,75 @@
+---
+mdxFragment: true
+htmlTemplate: mdxHtmlTemplate.html
+---
+
+import HtmlHead from "./htmlHead.jsx"
+import SiteHeader from "./siteHeader.jsx"
+import SiteFooter from "./siteFooter.jsx"
+import Card from "../../components/card.jsx"
+import MediaFeatureCard from "../../components/MediaFeatureCard.jsx"
+import { useRemarkSync } from "react-remark"
+
+export const Features = ({ features }) => {
+  /* we showcase the first feature, and just loop through the rest as cards */
+  const showcased =
+    features && features.length > 0
+      ? features[0]
+      : { title: "", description: "" }
+  const showcasedTitle = useRemarkSync(showcased.title)
+  const showcasedDescription = useRemarkSync(showcased.description)
+
+const others = features && features.length > 0 ? features.slice(1) : []
+
+return (
+
+  <>
+    <MediaFeatureCard
+      titleMarkdown={showcased.title}
+      descriptionMarkdown={showcased.description}
+      primaryAction={showcased.primaryAction}
+      secondaryAction={showcased.secondaryAction}
+      imageUrl={showcased.imageUrl}
+      svgUrl={showcased.svgUrl}
+      svgFillColor={showcased.svgFillColor}
+      svgViewBox={showcased.svgViewBox}
+      videoUrl={showcased.videoUrl}
+    />
+
+    {others.map((feature, index) => (
+      <MediaFeatureCard
+        key={feature.title}
+        titleMarkdown={feature.title}
+        descriptionMarkdown={feature.description}
+        mediaFirst={index % 2 === 0}
+        imageUrl={feature.imageUrl}
+        svgUrl={feature.svgUrl}
+        svgFillColor={feature.svgFillColor}
+        svgViewBox={feature.svgViewBox}
+        videoUrl={feature.videoUrl}
+      />
+    ))}
+
+  </>
+
+)
+}
+
+<HtmlHead {...props} />
+
+  <body>
+    <div className="col-lg-8 mx-auto p-4 py-md-5 container-sm" style={{maxWidth:"960px"}}>
+
+      <SiteHeader {...props} />
+
+      <main>
+
+        <Features features={props.features}/>
+
+      </main>
+
+      <SiteFooter {...props} />
+
+    </div>
+
+  </body>

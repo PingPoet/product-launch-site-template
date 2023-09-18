@@ -1,0 +1,39 @@
+{
+  "name": "pingpoet-www",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf _site; rm -rf .parcel-cache",
+    "build": "npm run clean; run-p build:*",
+    "build:11ty": "npx @11ty/eleventy",
+    "build:css": "parcel build --dist-dir _site/style content/style/style.scss",
+    "build:js": "parcel build --dist-dir _site/js content/js/main.js",
+    "build:images": "rm -rf _site/images ; mkdir _site ; cp -R content/images _site/images",
+    "build:videos": "rm -rf _site/videos ; mkdir _site ; cp -R content/videos _site/videos",
+    "start": "npm run clean; run-p watch:*",
+    "watch:css": "parcel watch --no-hmr --dist-dir _site/style content/style/style.scss",
+    "watch:js": "parcel watch --no-hmr --dist-dir _site/js content/js/main.js",
+    "watch:images": "npm run build:images",
+    "watch:videos": "npm run build:videos",
+    "watch:11ty": "npx @11ty/eleventy --watch",
+    "//watch:serve": "We use serve instead of 11ty because it's more prod-like and specifically it serves .js files which 11ty dev server doesn't.",
+    "watch:serve": "npx serve _site"
+  },
+  "license": "ISC",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@jamshop/eleventy-plugin-mdx": "github:activescott/eleventy-plugin-mdx#latest",
+    "@parcel/transformer-sass": "^2.7.0",
+    "js-yaml": "^4.1.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-remark": "^2.1.0",
+    "serve": "^14.1.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.1"
+  }
+}

@@ -1,0 +1,42 @@
+// Ping Poet Tetradic Color Scheme
+$color_dogwood_rose: #d11363;
+$color_fulvous_orange: #d28314;
+$color_emerald_green: #14d283;
+$color_flickr_blue: #1463d2;
+
+// Ping Poet Complementary Color Scheme (https://coolors.co/d11363)
+$color_emerald_green: #14d283;
+
+// Ping Poet Split Complementary Color Scheme (https://coolors.co/d11363)
+$color_malachite_green: #14d243;
+//$color_emerald_green: #14d283;
+$color_turquoise: #14d2c2;
+
+// a gray derived from a tone of dogwood_rose
+$color_gray: #7a6c72;
+// a lightly and darkly tinted versions of color scheme colors:
+$color_turquoise_light: #7ff3e9;
+$color_turquoise_dark: #43a29a;
+$color_emerald_light: #7ff3c3;
+$color_emerald_dark: #3ca9a0;
+
+// customize bootstrap theme colors
+$primary: $color_dogwood_rose;
+$secondary: $color_emerald_dark;
+
+// Import all of Bootstrap's CSS
+// https://getbootstrap.com/docs/5.2/customize/sass/#importing
+@import "~bootstrap/scss/bootstrap";
+
+/* this is a reusable way to put a nice mark before a unordered list */
+.icon-list li::before {
+  display: block;
+  flex-shrink: 0;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5rem;
+  content: "";
+  // for the colored svg see https://stackoverflow.com/a/46904983/51061
+  background-color: $primary;
+  mask: url("../images/arrow-right-circle-fill.svg") no-repeat 50% 50%;
+}
